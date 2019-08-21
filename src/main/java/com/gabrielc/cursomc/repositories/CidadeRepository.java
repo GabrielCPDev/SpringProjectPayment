@@ -15,5 +15,4 @@ public interface CidadeRepository extends JpaRepository<Estado, Integer>{
 
 	void saveAll(List<Cidade> asList);
 
-	
 }
