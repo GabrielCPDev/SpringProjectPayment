@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gabrielc.cursomc.domain.Cliente;
-import com.gabrielc.cursomc.services.ClienteService;
+import com.gabrielc.cursomc.domain.Categoria;
+import com.gabrielc.cursomc.services.CategoriaService;
 
 @RestController
 @RequestMapping(value="/categorias")
 public class CategoriaResource {
 
 	@Autowired
-	private ClienteService service;	
+	private CategoriaService service;	
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable Integer id) {
-		Cliente obj = service.buscar(id);
+		Categoria obj = service.buscar(id);
 		return ResponseEntity.ok().body(obj);
 		
 		
